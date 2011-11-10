@@ -5,3 +5,10 @@
  *= require_self
  *= require_tree . 
 */
+
+#map_canvas {
+        margin: 0;
+        padding: 0;
+        height: 400px;
+        width: 400px;
+}
