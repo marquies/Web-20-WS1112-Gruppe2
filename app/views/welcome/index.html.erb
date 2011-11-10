@@ -12,3 +12,6 @@
     <li><%= user[:name] %>, <%= user[:location] %></li>
   <% end %>
 </ul>
+
+<%= link_to 'Users als JSON', root_path(:format => :json) %> <br/>
+<%= link_to 'Users als XML', root_path(:format => :xml) %>
