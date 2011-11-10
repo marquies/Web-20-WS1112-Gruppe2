@@ -2,42 +2,14 @@
 <html>
 <head>
   <title>SeminarDemo</title>
+
+<script type="text/javascript"        src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;key=ABQIAAAA9OTeAX6_UoHU9_-aOrjdmRT2yXp_ZAY8_ufC3CFXhHIE1NvwkxTC-YH0m1nifZBG9usGu06_mU3fbw"></script>
+
+
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 
-<script type="text/javascript"        src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;key=ABQIAAAA9OTeAX6_UoHU9_-aOrjdmRT2yXp_ZAY8_ufC3CFXhHIE1NvwkxTC-YH0m1nifZBG9usGu06_mU3fbw"></script>
-<script type="text/javascript">
-      var map;
-      var geocoder = new google.maps.Geocoder();
-
-      function codeAddress(address) {
-        geocoder.geocode( { 'address': address}, function(results, status) {
-        if (status == google.maps.GeocoderStatus.OK) {
-            map.setCenter(results[0].geometry.location);
-            var marker = new google.maps.Marker({
-                map: map, 
-                position: results[0].geometry.location
-            });
-        } else {
-            alert("Geocode was not successful for the following reason: " + status);
-        }
-      });}
-
-
-      function initialize() {
-        
-        var address = "Universitätsstr. 1, Hagen, Germany";
-        codeAddress(address);
-        var myOptions = {
-          zoom: 16,
-          mapTypeId: google.maps.MapTypeId.SATELLITE
-        };
-        map = new google.maps.Map(document.getElementById('map_canvas'),
-            myOptions);
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
-    </script>
 
 </head>
 <body>
