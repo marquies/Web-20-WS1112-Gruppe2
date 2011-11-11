@@ -1,6 +1,6 @@
 class WelcomeController < ApplicationController
   def index
-    ning = Ning.new('foo')
+    #ning = Ning.new('foo')
     @users = Ning.new('testkey').users
     
 
