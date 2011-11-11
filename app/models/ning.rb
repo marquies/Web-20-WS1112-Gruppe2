@@ -46,7 +46,8 @@ class Ning
     #	   {:name => 'Mustafa', :location => 'Hamburg'},
     #	   {:name => 'Patrick', :location => 'Frankfurt'}]
     
-    data = self.call2("User/alpha?xn_pretty=true&fields=author,fullName,location")
+    data = self.call2("User/alpha?xn_pretty=true&fields=author,fullName,location,iconUrl")
+    Rails.logger.debug(data)
     result = JSON.parse(data)
     Rails.logger.info("*** Entry " +  result["entry"].to_s)
     return result["entry"]
