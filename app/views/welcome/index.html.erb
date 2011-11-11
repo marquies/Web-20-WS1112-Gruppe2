@@ -9,7 +9,7 @@
 
 <ul>
   <% @users.each do |user| %>
-    <li><%= user[:name] %>, <%= user[:location] %></li>
+    <li><%= user["fullName"] %>, <%= user["location"] %></li>
   <% end %>
 </ul>
 

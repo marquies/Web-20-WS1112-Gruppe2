@@ -34,12 +34,12 @@ function loadUsers() {
                     var marker = new google.maps.Marker({
                         map: map,
                         draggable: false,
-                        title: val.name,
+                        title: val.fullName,
                         animation: google.maps.Animation.DROP,
                         position: results[0].geometry.location
                     });
                     var infowindow = new google.maps.InfoWindow({
-                        content: "<div>Hier wohnt Benutzer: "+val.name+"</div>"
+                        content: "<div>Hier wohnt Benutzer: "+val.fullName+"</div>"
                     });
                     google.maps.event.addListener(marker, 'click', function() {
                         infowindow.open(map,marker);
