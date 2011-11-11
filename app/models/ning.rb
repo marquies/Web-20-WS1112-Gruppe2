@@ -38,7 +38,7 @@ class Ning
   end
   
   def users
-    data = self.call2("User/alpha?xn_pretty=true&fields=author,fullName,location,iconUrl")
+    data = self.call2("User/alpha?xn_pretty=true&fields=author,fullName,location,iconUrl&count=100")
     Rails.logger.debug(data)
     result = JSON.parse(data)
     Rails.logger.info("*** Entry " +  result["entry"].to_s)
