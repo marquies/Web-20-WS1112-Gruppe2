@@ -1,0 +1,24 @@
+
+#flickR-container {
+	width:330px;
+	height:440px;
+	background-color:#999;
+	padding:1px;
+}
+
+.flickR-loading {
+	background:url( '/images/activity_indicator_bg999.gif' ) no-repeat center center;
+}
+
+.flickR-thumb-container {
+	float:left;
+	display:block;
+	margin:2px;
+	padding:0;
+	width:100px;
+	height:100px;
+	overflow:hidden;
+	text-align:center;
+	border:3px solid #fff;
+	outline:1px solid #ccc;
+}  

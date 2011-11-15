@@ -4,11 +4,31 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require_tree . 
+ *= require flickr
 */
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	padding:10px;
+}
+
+#container {
+	width:990px;
+	margin-left:auto;
+	margin-right:auto;
+	background-color:#eee;
+}
 
 #map_canvas {
-        margin: 0;
-        padding: 0;
-        height: 400px;
-        width: 100%;
+	float:left;
+	margin: 0;
+	padding: 0;
+	height: 442px;
+	width: 650px;
+/*	width: 100%;*/
+}
+#flickR-container {
+	float:right;
 }

@@ -3,7 +3,10 @@
 <h1>Welcome#index</h1>
 <p>Find me in app/views/welcome/index.html.erb</p>
 
-<div id="map_canvas"></div>
+<div id="mashups">
+	<div id="map_canvas"></div>
+	<div id="flickR-container"></div>
+</div>
 
 <h2>Users</h2>
 
@@ -17,3 +20,8 @@
 
 <%= link_to 'Users als JSON', root_path(:format => :json) %> <br/>
 <%= link_to 'Users als XML', root_path(:format => :xml) %>
+
+<%= p @flickr.inspect %>
+
+
+</script>

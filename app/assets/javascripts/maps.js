@@ -38,9 +38,11 @@ function loadUsers() {
                         animation: google.maps.Animation.DROP,
                         position: results[0].geometry.location
                     });
+
                     var infowindow = new google.maps.InfoWindow({
                         content: "<div>Hier wohnt Benutzer: "+val.fullName+
-                        "<p><img style=\"width: 100px; height: 100px;\" src=\""+ val.iconUrl +"\" /></p></div>"
+                        "<p><img style=\"width: 100px; height: 100px;\" src=\""+ val.iconUrl +"\" /></p>" +
+						'<p><a href="#" onclick="javascript:flickR.load_photos(' + results[0].geometry.location.lat() + ', ' + results[0].geometry.location.lng() + ');return false;">Bilder aus der Umgebung anzeigen</a>' + "</p></div>"
                     });
                     google.maps.event.addListener(marker, 'click', function() {
                         infowindow.open(map,marker);
