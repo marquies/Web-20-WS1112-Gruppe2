@@ -9,7 +9,7 @@ var flickR = {
 		// München:
 		// lat: 48.13913
 		// lon: 11.58019
-		var flickrURL = 'http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + this.api_key + '&lat=' + lat + '&lon=' + lon + '&per_page=12&page=0&format=json&nojsoncallback=1';
+		var flickrURL = 'http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=' + this.api_key + '&lat=' + lat + '&lon=' + lon + '&per_page=8&page=0&format=json&nojsoncallback=1';
 		//alert(flickrURL);
 		$('#flickR-container').html('');
 		$('#flickR-container').addClass('flickR-loading');

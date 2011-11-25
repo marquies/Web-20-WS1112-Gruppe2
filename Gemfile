@@ -13,7 +13,7 @@ group :development, :test do
   gem 'sqlite3'
 end
 
- 
+gem 'twitter-bootstrap-rails' 
 gem 'json'
 
 # Gems used only for assets and not required

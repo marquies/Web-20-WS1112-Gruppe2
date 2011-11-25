@@ -1,27 +1,20 @@
+<div class="content">
+  <div class="page-header">
+    <h1>Gruppe 2 <small>Technologien des Web 2.0 - Anwendungsentwicklung</small></h1>
+  </div>
+  
+  <div class="row">
+    <div class="span10">
+      <h2>Google Maps + Ning</h2>
+      <div id="map_canvas"></div>
 
+      <p><button onClick="loadUsers()">Ning Benutzer anzeigen</button></p>
 
-<h1>Welcome#index</h1>
-<p>Find me in app/views/welcome/index.html.erb</p>
-
-<div id="mashups">
-	<div id="map_canvas"></div>
-	<div id="flickR-container"></div>
+    </div>
+    <div class="span6">
+      <h2>Flickr</h2>
+      <div id="flickR-container"></div>
+    </div>
+  </div>
 </div>
 
-<h2>Users</h2>
-
-<ul>
-  <% @users.each do |user| %>
-    <li><%= user["fullName"] %>, <%= user["location"] %></li>
-  <% end %>
-</ul>
-
-<p><button onClick="loadUsers()">Load User Placemarks</button></p>
-
-<%= link_to 'Users als JSON', root_path(:format => :json) %> <br/>
-<%= link_to 'Users als XML', root_path(:format => :xml) %>
-
-<%= p @flickr.inspect %>
-
-
-</script>

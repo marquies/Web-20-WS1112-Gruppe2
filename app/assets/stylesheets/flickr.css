@@ -2,7 +2,6 @@
 #flickR-container {
 	width:330px;
 	height:440px;
-	background-color:#999;
 	padding:1px;
 }
 
@@ -14,11 +13,10 @@
 	float:left;
 	display:block;
 	margin:2px;
-	padding:0;
+	padding:0px;
 	width:100px;
 	height:100px;
 	overflow:hidden;
 	text-align:center;
-	border:3px solid #fff;
 	outline:1px solid #ccc;
 }  

@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>SeminarDemo</title>
-
-<script type="text/javascript"        src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;key=ABQIAAAA9OTeAX6_UoHU9_-aOrjdmRT2yXp_ZAY8_ufC3CFXhHIE1NvwkxTC-YH0m1nifZBG9usGu06_mU3fbw"></script>
-
-
+  <title>Seminar Web 2.0 und Social Software</title>
+  <%= javascript_include_tag "http://maps.googleapis.com/maps/api/js?sensor=false&key=ABQIAAAA9OTeAX6_UoHU9_-aOrjdmRT2yXp_ZAY8_ufC3CFXhHIE1NvwkxTC-YH0m1nifZBG9usGu06_mU3fbw" %>
   <%= stylesheet_link_tag    "application" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
-
-
 </head>
 <body>
-	<div id="container">
-		<%= yield %>
-	</div>
+
+  <div class="topbar">
+    <div class="fill">
+      <div class="container">
+        <a class="brand" href="/">Seminar Web 2.0 und Social Software</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <%= yield %>
+
+    <footer>
+      <p>&copy; 2011, Seminar Gruppe 2: Christoph T., Mustafa C., Patrick B., Robert S.</p>
+    </footer>
+  </div>
+
 </body>
 </html>
