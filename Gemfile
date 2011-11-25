@@ -5,6 +5,15 @@ gem 'rails', '3.1.1'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
+# http://devcenter.heroku.com/articles/how-do-i-use-sqlite3-for-development
+group :production do
+  gem 'pg'
+end
+group :development, :test do
+  gem 'sqlite3'
+end
+
+ 
 gem 'json'
 
 # Gems used only for assets and not required
