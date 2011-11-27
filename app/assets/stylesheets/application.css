@@ -9,6 +9,11 @@
 */
 
 /* Override some defaults */
+* {
+	margin:0;
+	padding:0;
+}
+
 html, body {
   background-color: #eee;
 }
@@ -60,3 +65,20 @@ body {
   height: 440px;
   width: 560px;
 }
+#maps_logging {
+	width:544px;
+}
+#flickr_logging {
+	
+}
+.log_msg {
+	display:block;
+	color:#999;
+}
+.log_failure {
+	color:#900;
+}
+.log_success {
+	color:#090;
+}
+

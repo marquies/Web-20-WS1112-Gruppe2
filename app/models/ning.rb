@@ -1,6 +1,5 @@
 class Ning
   
-  
   # TODO
   # Change Network to FernUni Network (Change URL and API Keys...)
   # Catch failed queries
@@ -9,16 +8,22 @@ class Ning
   def initialize(apikey)
     # connect to NING API
     
-    @baseUrl = "https://external.ningapis.com/xn/rest/mydeveloper/1.0/"
+    @baseUrl = "https://external.ningapis.com/xn/rest/fernuni/1.0/"
+    @email = "rob@shadaim.de"
+    @password = "bluppblupp"
+    @key = "565fa2ad-02bc-4153-9a66-85793a1b015e"
+    @secret = "77516875-df1e-4a72-96f9-5d2375c42f8b"
     
-    email = "maaq@gmx.de"
-    password = "summsumm"
-    
-    self.login(email, password)
+    self.login()
   end
   
-  def login(login, password)
-    data = `curl -u #{login}:#{password} -d 'oauth_signature_method=PLAINTEXT&oauth_consumer_key=0d7fc228-3365-4b89-94aa-b23ba30a8cef&oauth_signature=64005976-973c-4725-92ec-b5493cd8ab9a%26'     'https://external.ningapis.com/xn/rest/mydeveloper/1.0/Token?xn_pretty=true'`
+  def login()
+    curl_req = "curl -u #{@email}:#{@password} -d 'oauth_signature_method=PLAINTEXT&oauth_consumer_key=#{@key}&oauth_signature=#{@secret}%26' '#{@baseUrl}Token?xn_pretty=true'"
+
+    Rails.logger.info(curl_req)
+    data = `#{curl_req}`
+
+    
     result = JSON.parse(data)
     @oauthToken = result["entry"]["oauthToken"]
     @oauthTokenSecret = result["entry"]["oauthTokenSecret"]
@@ -26,17 +31,12 @@ class Ning
   end
   
   def call2(url)
-    sig = self.buildSignature
-    data = `curl -H 'Authorization: OAuth oauth_signature_method="PLAINTEXT",oauth_consumer_key="#{@oauthConsumerKey}",oauth_token="#{@oauthToken}",oauth_signature="#{sig}"' \
+    data = `curl -H 'Authorization: OAuth oauth_signature_method="PLAINTEXT",oauth_consumer_key="#{@oauthConsumerKey}",oauth_token="#{@oauthToken}",oauth_signature="#{@secret}%26#{@oauthTokenSecret}"' \
     '#{@baseUrl}#{url}'`
+    
     return data
   end
-  
-  def buildSignature()
-    sig = "64005976-973c-4725-92ec-b5493cd8ab9a&" + @oauthTokenSecret
-    return sig
-  end
-  
+    
   def users
     data = self.call2("User/alpha?xn_pretty=true&fields=author,fullName,location,iconUrl&count=100")
     Rails.logger.debug(data)

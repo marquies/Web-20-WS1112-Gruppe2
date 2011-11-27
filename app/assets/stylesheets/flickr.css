@@ -5,6 +5,12 @@
 	padding:1px;
 }
 
+#flickR-container ul, #flickR-container li {
+	padding:0;
+	margin:0;
+}
+
+
 .flickR-loading {
 	background:url( '/images/activity_indicator_bg999.gif' ) no-repeat center center;
 }
