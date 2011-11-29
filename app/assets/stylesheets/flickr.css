@@ -12,7 +12,7 @@
 
 
 .flickR-loading {
-	background:url( '/images/activity_indicator_bg999.gif' ) no-repeat center center;
+	background:url( '/images/ajax-loader.gif' ) no-repeat center center;
 }
 
 .flickR-thumb-container {
